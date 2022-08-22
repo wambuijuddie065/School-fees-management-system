@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { StudentInterface } from '../interfaces/studentInterface';
 import { StudentsService } from '../students.service';
 
@@ -12,7 +13,8 @@ export class DashboardComponent implements OnInit {
   studentsArr!:StudentInterface[]
 
   constructor(
-    private studentService:StudentsService
+    private studentService:StudentsService, 
+    private route:Router
   ) { }
 
   student:StudentInterface={
@@ -38,6 +40,11 @@ export class DashboardComponent implements OnInit {
     const diff=schoolFees-paidFees
     return diff
       
+  }
+  showStudentDetails(i:number)
+  {this.route.navigate(['student',i])
+
+
   }
   
 

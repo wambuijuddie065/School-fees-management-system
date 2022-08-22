@@ -23,4 +23,8 @@ export class StudentsService {
   getStudents(){
     return this.studentsArr
   }
+  getStudent(index:number){
+    return this.studentsArr[index]
+
+  }
 }

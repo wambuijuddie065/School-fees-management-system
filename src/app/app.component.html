@@ -11,11 +11,15 @@
             <a [ngStyle]="{textDecoration:'none' ,color:'white',
             height:'50px',padding:'5px',textAlign:'center'}" routerLink="home" routerLinkActive="active" >HOME</a>
            
-            <a [ngStyle]="{textDecoration:'none',color:'white',height:'50px' }" routerLink="dashboard" routerLinkActive="active" >DASHBOARD</a>
+            <a [ngStyle]="{textDecoration:'none',color:'white',height:'50px' }"
+             routerLink="dashboard" routerLinkActive="active" *ngIf="authGuard.isLoggedIn"  >DASHBOARD</a>
         </div>
         <div [ngStyle]="{display:'flex',gap:'40px'}" >
-            <a [ngStyle]="{textDecoration:'none',color:'white',height:'50px'}" routerLink="login" routerLinkActive="active" >LOGIN</a>
-            <a [ngStyle]="{textDecoration:'none' ,color:'white',height:'50px'}" href=""routerLinkActive="active" >LOGOUT</a>
+            <a [ngStyle]="{textDecoration:'none',color:'white',height:'50px'}" 
+            routerLink="login" routerLinkActive="active" *ngIf="!authGuard.isLoggedIn"  >LOGIN</a>
+            <button [ngStyle]="{textDecoration:'none' 
+            ,color:'white',height:'50px'}" href=""
+            routerLinkActive="active" (click)="logout()" *ngIf="authGuard.isLoggedIn" >LOGOUT</button>
         </div>
 
     </div>
