@@ -7,21 +7,24 @@
     color:'white',
     backgroundColor:'#3461AB'}">
         <div>LOGO</div>
-        <div [ngStyle]="{display:'flex',gap:'40px'}">
-            <a [ngStyle]="{textDecoration:'none' ,color:'white'}" routerLink="" >HOME</a>
+        <div [ngStyle]="{display:'flex',gap:'40px',alignItems:'center'}">
+            <a [ngStyle]="{textDecoration:'none' ,color:'white',
+            height:'50px',padding:'5px',textAlign:'center'}" routerLink="home" routerLinkActive="active" >HOME</a>
            
-            <a [ngStyle]="{textDecoration:'none',color:'white'}" routerLink="">DASHBOARD</a>
+            <a [ngStyle]="{textDecoration:'none',color:'white',height:'50px' }" routerLink="dashboard" routerLinkActive="active" >DASHBOARD</a>
         </div>
         <div [ngStyle]="{display:'flex',gap:'40px'}" >
-            <a [ngStyle]="{textDecoration:'none',color:'white'}" href="">LOGIN</a>
-            <a [ngStyle]="{textDecoration:'none' ,color:'white'}" href="">LOGOUT</a>
+            <a [ngStyle]="{textDecoration:'none',color:'white',height:'50px'}" routerLink="login" routerLinkActive="active" >LOGIN</a>
+            <a [ngStyle]="{textDecoration:'none' ,color:'white',height:'50px'}" href=""routerLinkActive="active" >LOGOUT</a>
         </div>
 
     </div>
     <router-outlet></router-outlet>
+    <!-- <div>
+        <app-hero></app-hero>
+        <app-login></app-login>
+        <app-dashboard></app-dashboard>
+    </div> -->
 </div>
 
-<app-hero></app-hero>
-<app-login></app-login>
-<!-- <app-add-student></app-add-student> -->
-<app-dashboard></app-dashboard>
+
