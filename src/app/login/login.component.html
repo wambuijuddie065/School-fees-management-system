@@ -1,24 +1,45 @@
-<div [ngStyle]="{display:'flex', margin:'20px auto' , padding:'20px', height:'500px', width:'900px' }">
-    <div [ngStyle]="{width:'45%',backgroundColor:'#3461AB', color:'white', textAlign:'center'}">
-        <h2 [ngStyle]="{margin:'230px 150px'}">WELCOME <br>BACK!! </h2>
-      
-    </div>
-    <div [ngStyle]="{width:'55%', display:'flex', flexDirection:'column', 
-        gap:'30px', alignItems:'center',alignContent:'center'}">
-        <div><img [ngStyle]="{height:'130px', width:'100px'}" src="data:image/png;base64,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" alt=""></div>
-        <!-- <h3 [ngStyle]="{textAlign:'center' }">LOGIN HERE:</h3> -->
-        <div [ngStyle]="{ display:'flex', flexDirection:'column', gap:'5px'}">
-            <label for="Email" >Email:</label>
-            <input type="email" [ngStyle]="{height:'40px', width:'350px'}">
-        </div>
-        <div [ngStyle]="{ display:'flex', flexDirection:'column', gap:'5px'}">
-            <label for="Password">Password:</label>
-            <input type="password" [ngStyle]="{height:'40px', width:'350px'}">
-        </div>
-        <div><button [ngStyle]="{backgroundColor:'#3461AB',
-            height:'50px',width:'360px', color:'white',
-             border:'none', borderRadius:'5px', fontSize:'18px', marginTop:'20px'}"  (click)="login()">LOGIN</button></div>
-        
-    </div>
-    
+
+
+<div [ngStyle]="mainLoginDivStyles()">
+  <div >
+    <p *ngIf="!errMessage ; else noError" ></p>
+    <ng-template #noError>
+
+        <p>{{errMessage}}</p>
+
+    </ng-template>
+  </div>
+  <div><img [ngStyle]="{height:'60px'}" src="https://cdn.pixabay.com/photo/2017/01/16/10/51/diploma-1983725__480.png" alt=""></div>
+  <h3 [ngStyle]="{textAlign:'center'}">LOGIN HERE</h3>
+
+
+
+<div [ngStyle]="{ display: 'flex', flexDirection: 'column', gap: '5px'}">
+  <label for="Email">Email:</label>
+  <input type="email" [ngStyle]="{ height: '40px', width: '350px' }" [ngModelOptions]="{standalone:true}" [(ngModel)]="email" required />
 </div>
+<div [ngStyle]="{ display: 'flex', flexDirection: 'column', gap: '5px' }">
+  <label for="Password">Password:</label>
+  <input type="password" [ngStyle]="{ height: '40px', width: '350px' }" [ngModelOptions]="{standalone:true}" [(ngModel)]="pwd" required/>
+</div>
+<div>
+  <button
+    [ngStyle]="{
+      backgroundColor: '#5A1013',
+      height: '50px',
+      width: '360px',
+      color: 'white',
+      border: 'none',
+      borderRadius: '5px',
+      fontSize: '18px',
+      marginTop: '20px'
+    }"
+    (click)="login()"
+  >
+    LOGIN
+  </button>
+</div>
+
+
+</div>
+    

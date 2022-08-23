@@ -19,7 +19,5 @@ export class AppComponent {
       this.authGuard.logout()
       this.route.navigate(['home'])
     }
-
-
  
 }

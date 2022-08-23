@@ -1,7 +1,7 @@
 
 
 export interface StudentInterface{
-    regNo:number
+    regNo:string
     name:string
     feePaid:number
     schoolFee:number

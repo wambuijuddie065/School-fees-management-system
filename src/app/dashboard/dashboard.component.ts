@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   student:StudentInterface={
-    regNo:0,
+    regNo:'',
     name:'',
     feePaid:0,
     schoolFee:40000
@@ -32,6 +32,7 @@ export class DashboardComponent implements OnInit {
   onAdd(){
     
       this.studentService.addStudent(this.student)
+      
     
    
     
@@ -46,6 +47,7 @@ export class DashboardComponent implements OnInit {
 
 
   }
+ 
   
 
 }

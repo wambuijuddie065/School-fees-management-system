@@ -1,23 +1,25 @@
-<div [ngStyle]="{display:'flex',flexDirection:'column',alignItems:'center', gap:'10px' ,  margin:'20px',height:'700px'}">
-    <h1>JITU SCHOOL</h1>
-    <div>
-        <h3 [ngStyle]="{textAlign:'center'}">MOTTO:</h3>
-     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-    </div>
-    <div>
-        <h3 [ngStyle]="{textAlign:'center'}">MISSION:</h3>
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-    Deleniti ut voluptates reiciendis iusto velit at, quod dolorem? Ex, temporibus corporis!
-    </div>
+<div  [ngStyle]="{display:'flex',padding:'10px', width:'50vw',margin:'50px auto'}">
     
-    <div>
-        <h3 [ngStyle]="{textAlign:'center'}">VISION:</h3>
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-    Deleniti ut voluptates reiciendis iusto velit at, quod dolorem? Ex, temporibus corporis!
+    <div [ngStyle]="{display:'flex',flexDirection:'column',alignItems:'center',width:'50%'}">
+        
+        <div>
+            
+         <p [ngStyle]="{textAlign:'center',fontSize:'60px',fontWeight:'bold'}">Lorem ipsum dolor  elit. </p> 
+        </div>
+        <div>
+          <p  [ngStyle]="{textAlign:'center',fontSize:'25px'}">Deleniti ut voluptates reiciendis iusto velit at, quod dolorem? Ex, temporibus corporis!</p>
+      
+        
+        </div>
+        
+        
+        <div><button [ngStyle]="{backgroundColor:'#5A1013',
+        height:'50px',width:'250px', color:'white',
+         border:'none', borderRadius:'50px', marginTop:'40px', fontSize:'18px'}">GET STARTED</button></div>
+    
+    
     </div>
-    <div><button [ngStyle]="{backgroundColor:'#3461AB',
-    height:'50px',width:'250px', color:'white',
-     border:'none', borderRadius:'50px', marginTop:'40px', fontSize:'18px'}">GET STARTED</button></div>
-
-
+    <div [ngStyle]="{width:'50%'}">
+        <img [ngStyle]="{objectFit:'cover',position:'absolute',width:'500px'}" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmXXCDYFr81V1g-czG3hU0IKW_IXK80GaFBw&usqp=CAU" alt="">
+    </div>
 </div>

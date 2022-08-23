@@ -10,7 +10,7 @@ import { StudentsService } from '../students.service';
 })
 export class StudentComponent implements OnInit {
   student:StudentInterface={
-    regNo:0,
+    regNo:'',
     name:'',
     feePaid:0,
     schoolFee:40000

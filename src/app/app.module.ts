@@ -12,6 +12,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { StudentComponent } from './student/student.component';
 import { AuthGuardService } from './Services/auth-guard.service';
 import { StudentsGuardService } from './Services/students-guard.service';
+import { WithBalancePipe } from './Pipes/with-balance.pipe';
+import { WithoutBalancePipe } from './Pipes/without-balance.pipe';
 
 
 
@@ -37,6 +39,8 @@ const appRouter:Routes=[
     DashboardComponent,
     PageNotFoundComponent,
     StudentComponent,
+    WithBalancePipe,
+    WithoutBalancePipe,
     
   ],
   imports: [

@@ -1,56 +1,146 @@
-
-<div [ngStyle]="{display:'flex', flexDirection:'column', padding:'20px',height:'700px'}">
-    <div [ngStyle]="{display:'flex', padding:'10px' ,justifyContent:'space-between'}">
-        <!-- <button [ngStyle]="{backgroundColor:'#3461AB',
+<div
+  [ngStyle]="{
+    display: 'flex',
+    flexDirection: 'column',
+    padding: '20px',
+    height: '700px'
+  }"
+>
+  <div
+    [ngStyle]="{
+      display: 'flex',
+      padding: '10px',
+      justifyContent: 'space-between',
+      marginLeft:'400px'
+    }"
+  >
+    <!-- <button [ngStyle]="{backgroundColor:'#3461AB',
         height:'50px',width:'200px', color:'white',
          border:'none', borderRadius:'5px', fontSize:'18px'}" >NEW STUDENT</button> -->
-        <div [ngStyle]="{display:'flex', gap:'10px'}"> 
-   
-            <p>RegNo:</p><input [ngStyle]="{padding:'5px',width:'220px'}" [(ngModel)] ="student.regNo" type="number">
-            <p>Name:</p><input [ngStyle]="{ padding:'5px',width:'220px'}" [(ngModel)] ="student.name" type="text">
-           <p>Fees Paid:</p><input [ngStyle]="{ padding:'5px',width:'220px'}" [(ngModel)] ="student.feePaid"  type="number">
-            
-            
-            <button [ngStyle]="{backgroundColor:'#3461AB',
-            height:'50px',width:'120px', color:'white',
-             border:'none', borderRadius:'5px', fontSize:'18px'}" (click)="onAdd()">ADD</button>
+    <div [ngStyle]="{ display: 'flex', gap: '10px' }">
+      <p>RegNo:</p>
+      <input
+        [ngStyle]="{ padding: '5px', width: '220px' }"
+        [(ngModel)]="student.regNo"
+        type="text"
+      />
+      <p>Name:</p>
+      <input
+        [ngStyle]="{ padding: '5px', width: '220px' }"
+        [(ngModel)]="student.name"
+        type="text"
+      />
+      <p>Fees Paid:</p>
+      <input
+        [ngStyle]="{ padding: '5px', width: '220px' }"
+        [(ngModel)]="student.feePaid"
+        type="number"
+      />
+
+      <button
+        [ngStyle]="{
+          backgroundColor: '#C4A484',
+          height: '50px',
+          width: '120px',
+          color: 'white',
+          border: 'none',
+          borderRadius: '5px',
+          fontSize: '18px'
+        }"
+        (click)="onAdd()"
+      >
+        ADD
+      </button>
+    </div>
+  </div>
+
+  <div [ngStyle]="{ display: 'flex', padding: '10px' }">
+    <div
+      [ngStyle]="{
+        display: 'flex',
+        flexDirection: 'column',
+        alignContent: 'space-between',
+        gap: '30px',
+        width: '25%',
+        borderRight: 'solid 1px grey',
+        padding: '10px',
+        height: '700px',
+        backgroundColor: '#C4A484'
+      }"
+    >
+      <button 
+        [ngStyle]="{
+          height: '80px',
+          padding: '5px',
+          backgroundColor: '#C4A484',
+          borderRadius: '20px',
+          
+          fontSize: '18px'
+        }"
+      >
+        SHOW ALL STUDENTS
+      </button>
+      <button 
+        [ngStyle]="{
+          height: '80px',
+          padding: '5px',
+          backgroundColor: '#C4A484',
+          borderRadius: '20px',
+          
+          fontSize: '18px'
+        }"
+      >
+        STUDENTS WITH BALANCE
+      </button>
+      <button 
+        [ngStyle]="{
+          height: '80px',
+          padding: '5px',
+          backgroundColor: '#C4A484',
+          borderRadius: '20px',
+         
+          fontSize: '18px'
+        }"
+      >
+        STUDENTS WITHOUT BALANCE
+      </button>
+    </div>
+    <div [ngStyle]="{ width: '75%', padding: ' 0px 20px' }">
+      <div   [ngStyle]="{
+        display: 'flex',
+        justifyContent: 'space-between',
+        marginBottom: '30px',
+        height: '20px',
+        padding: '5px'
+      }">
+        <h3>REGNO</h3>
+        <h3>NAME</h3>
+        <h3>FEES PAID</h3>
+        <h3>FEE BALANCE</h3>
+      </div>
+      <div *ngIf="studentsArr.length; else noStudent">
+        <div *ngFor="let student of studentsArr; let i = index">
+          <div
+            [ngStyle]="{
+              display: 'flex',
+              justifyContent: 'space-between',
+              boxShadow: '5px 10px 18px #888888',
+              marginBottom: '50px',
+              height: '50px',
+              padding: '20px'
+            }"
+            (click)="showStudentDetails(i)"
+          >
+            <p>{{ student.regNo }}</p>
+            <p>{{ student.name }}</p>
+            <p>{{ student.feePaid | currency: "KSH" }}</p>
+            <p>{{ getBalance(student.schoolFee, student.feePaid) | currency: "KSH"  }}</p>
+          </div>
         </div>
+      </div>
+      <ng-template #noStudent>
+        <p><i>There are no students to display!!</i></p>
+      </ng-template>
     </div>
-
-
-<div [ngStyle]="{display:'flex' , padding:'10px'}">
-    <div [ngStyle]="{display:'flex',flexDirection:'column', 
-    alignContent:'space-between',gap:'30px',width:'25%',
-    borderRight:'solid 1px grey', padding:'10px',height:'700px', backgroundColor:'#3461AB'}">
-        <button [ngStyle]="{ height:'80px', padding:'5px', 
-        backgroundColor:'#3461AB', borderRadius:'20px',border:'none',fontSize:'18px' }" >SHOW ALL STUDENTS</button>
-        <button [ngStyle]="{ height:'80px', padding:'5px',backgroundColor:'#3461AB'
-        , borderRadius:'20px',border:'none',fontSize:'18px'}" >STUDENTS WITH BALANCE</button>
-        <button [ngStyle]="{ height:'80px', padding:'5px',backgroundColor:'#3461AB'
-        , borderRadius:'20px',border:'none',fontSize:'18px'}" >STUDENTS WITHOUT BALANCE</button>
-        
-
-    </div>
-    <div [ngStyle]="{width:'75%', padding:'20px'}">
-        <div *ngIf="studentsArr.length ; else noStudent">
-            <div *ngFor="let student of studentsArr; let i=index">
-                <div [ngStyle]="{display:'flex',justifyContent:'space-between', boxShadow:'5px 10px 18px #888888'
-                , marginBottom:'50px',height:'50px',padding:'20px'  } " (click)="showStudentDetails(i)" >
-                    <p>{{student.regNo}}</p>
-                    <p>{{student.name}}</p>
-                    <p>{{student.feePaid|currency :'KSH'}}</p>
-                    <p>{{getBalance(student.schoolFee,student.feePaid)}}</p>
-                    
-                    
-                </div>
-    
-            </div>
-    
-        </div>
-        <ng-template #noStudent>
-            <p><i>There are no students to display!!</i></p>
-        </ng-template>
-
-    </div>
-</div>
+  </div>
 </div>

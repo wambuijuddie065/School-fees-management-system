@@ -10,7 +10,7 @@ export class StudentsService {
    }
   private studentsArr:StudentInterface[]=[
     {
-      regNo:1,
+      regNo:'1',
       name:'Judy Wambui',
       feePaid:10000,
       schoolFee:40000
@@ -27,4 +27,5 @@ export class StudentsService {
     return this.studentsArr[index]
 
   }
+  
 }
