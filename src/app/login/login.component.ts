@@ -41,9 +41,30 @@ export class LoginComponent implements OnInit {
   }
     
   }
+  loginDivsStyles(){
+    return{
+      display: 'flex', 
+      flexDirection: 'column',
+       gap: '5px'
+    }
+  }
   loginInputStyles(){
    return {
+    height: '40px', 
+    width: '350px' 
 
+    }
+  }
+  loginBtnStyles(){
+    return{
+      backgroundColor: '#5A1013',
+      height: '50px',
+      width: '360px',
+      color: 'white',
+      border: 'none',
+      borderRadius: '5px',
+      fontSize: '18px',
+      marginTop: '20px'
     }
   }
 

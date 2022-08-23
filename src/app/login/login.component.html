@@ -14,28 +14,18 @@
 
 
 
-<div [ngStyle]="{ display: 'flex', flexDirection: 'column', gap: '5px'}">
+<div [ngStyle]="loginDivsStyles()">
   <label for="Email">Email:</label>
-  <input type="email" [ngStyle]="{ height: '40px', width: '350px' }" [ngModelOptions]="{standalone:true}" [(ngModel)]="email" required />
+  <input type="email" [ngStyle]=" loginInputStyles()" [ngModelOptions]="{standalone:true}" [(ngModel)]="email" required />
 </div>
-<div [ngStyle]="{ display: 'flex', flexDirection: 'column', gap: '5px' }">
+<div [ngStyle]="loginDivsStyles()">
   <label for="Password">Password:</label>
-  <input type="password" [ngStyle]="{ height: '40px', width: '350px' }" [ngModelOptions]="{standalone:true}" [(ngModel)]="pwd" required/>
+  <input type="password" [ngStyle]=" loginInputStyles()" [ngModelOptions]="{standalone:true}" [(ngModel)]="pwd" required/>
 </div>
 <div>
   <button
-    [ngStyle]="{
-      backgroundColor: '#5A1013',
-      height: '50px',
-      width: '360px',
-      color: 'white',
-      border: 'none',
-      borderRadius: '5px',
-      fontSize: '18px',
-      marginTop: '20px'
-    }"
-    (click)="login()"
-  >
+    [ngStyle]="loginBtnStyles()"
+    (click)="login()">
     LOGIN
   </button>
 </div>

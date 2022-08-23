@@ -14,6 +14,8 @@ import { AuthGuardService } from './Services/auth-guard.service';
 import { StudentsGuardService } from './Services/students-guard.service';
 import { WithBalancePipe } from './Pipes/with-balance.pipe';
 import { WithoutBalancePipe } from './Pipes/without-balance.pipe';
+import { StudentsWithBalanceComponent } from './students-with-balance/students-with-balance.component';
+import { StudentsWithoutBalanceComponent } from './students-without-balance/students-without-balance.component';
 
 
 
@@ -41,6 +43,8 @@ const appRouter:Routes=[
     StudentComponent,
     WithBalancePipe,
     WithoutBalancePipe,
+    StudentsWithBalanceComponent,
+    StudentsWithoutBalanceComponent,
     
   ],
   imports: [
