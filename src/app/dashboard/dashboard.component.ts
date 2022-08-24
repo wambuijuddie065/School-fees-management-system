@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { StudentInterface } from '../interfaces/studentInterface';
 import { StudentsService } from '../students.service';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +13,9 @@ import { StudentsService } from '../students.service';
 export class DashboardComponent implements OnInit {
   studentsArr!: StudentInterface[];
 
-  constructor(private studentService: StudentsService, private route: Router) {}
+ 
+
+  constructor(public studentService: StudentsService, private route: Router) {}
 
   student: StudentInterface = {
     regNo: '',
@@ -21,19 +24,56 @@ export class DashboardComponent implements OnInit {
     schoolFee: 40000,
   };
 
+
+  @ViewChild('reg')reg!:ElementRef
+  @ViewChild('nam')nam!:ElementRef
+  @ViewChild('fee')fee!:ElementRef
+
+  
+
   ngOnInit(): void {
+    
     this.studentsArr = this.studentService.getStudents();
   }
 
-  onAdd() {
-    this.studentService.addStudent(this.student);
-    // this.clear()
+  // renderStudent(status:string){
+  //    if(status ==='withBal'){
+  //     this.studentService.getStudents()
+  //     console.log('with bal');
+      
+  //    }else if(status === 'withNoBal'){
+  //     this.studentService.getStudents().filter(student =>student.feePaid >= 40000)
+  //     console.log('without bal');
+  //    }else{
+  //     this.studentsArr =  this.studentService.getStudents()
+  //     console.log('all');
+  //    }
+  
+  // }
+
+  
+  status:string='all'
+changeValue(val:string){
+  this.status=val
+
+}
+  onAdd(reg:string, name:string, fee:string) {
+    this.studentService.addStudent({
+      name,
+      regNo:reg,
+      feePaid:+fee,
+      schoolFee:40000
+    })
+    this.clear()
+    
+    
   }
   clear(){
-    this.student.regNo= '',
-    this.student.name= '',
-    this.student.feePaid= 0
-
+   
+  this.student.name=''
+  this.student.regNo=''
+  this.student.feePaid=0
+  this.student.schoolFee=40000
   }
   getBalance(schoolFees: number, paidFees: number) {
     const diff = schoolFees - paidFees;
@@ -46,7 +86,7 @@ export class DashboardComponent implements OnInit {
   toggleDisplayDiv(){
     this.isShowDiv=!this.isShowDiv
   }
-
+ 
   buttonStyles() {
     return {
       height: '80px',

@@ -8,9 +8,9 @@ import { StudentsService } from '../students.service';
 export class WithoutBalancePipe implements PipeTransform {
 
   constructor(private studentService:StudentsService){}
-  transform(value:StudentInterface[] , schoolFee:number):StudentInterface[]{
+  transform(value:StudentInterface[] , feePaid:number):StudentInterface[]{
     return value.filter(function(data:StudentInterface){
-      return Number(data.feePaid)>=schoolFee
+      return Number(data.feePaid)>=40000
     })
   }
 

@@ -9,19 +9,21 @@ export class StudentsService {
   constructor() {
    }
   private studentsArr:StudentInterface[]=[
-    {
-      regNo:'1',
-      name:'Judy Wambui',
-      feePaid:10000,
-      schoolFee:40000
-    }
+    
   ]
+  // gettudent()
   addStudent(newStudent:StudentInterface){
     this.studentsArr.push(newStudent)
+    console.log("added and cleared");
+    console.log(this.studentsArr);
+    
+    
 
   }
   getStudents(){
-    return this.studentsArr
+   
+   
+    return this.studentsArr;
   }
   getStudent(index:number){
     return this.studentsArr[index]

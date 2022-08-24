@@ -6,29 +6,29 @@
     height: '700px'
   }"
 >
-  
-    <div *ngIf="isShowDiv"  [ngStyle]="formDivStyles()">
-      <p>RegNo:</p>
-      <input [ngStyle]="addInputs()" [(ngModel)]="student.regNo" type="text" />
-      <p>Name:</p>
-      <input [ngStyle]="addInputs()" [(ngModel)]="student.name" type="text" />
-      <p>Fees Paid:</p>
-      <input
-        [ngStyle]="addInputs()"
-        [(ngModel)]="student.feePaid"
-        type="number"
-      />
+  <div *ngIf="isShowDiv" [ngStyle]="formDivStyles()">
+    <p>RegNo:</p>
+    <input [ngStyle]="addInputs()" [(ngModel)]="student.regNo" type="text" #reg />
+    <p>Name:</p>
+    <input [ngStyle]="addInputs()" [(ngModel)]="student.name" type="text"  #nam/>
+    <p>Fees Paid:</p>
+    <input
+      [ngStyle]="addInputs()"
+      [(ngModel)]="student.feePaid"
+      type="number"
+    #fee/>
 
-      <button [ngStyle]="addBtnStyles()" (click)="onAdd()">ADD</button>
-    </div>
-  
+    <button [ngStyle]="addBtnStyles()" (click)="onAdd(reg.value, nam.value,fee.value)">ADD</button>
+  </div>
 
   <div [ngStyle]="{ display: 'flex', padding: '10px' }">
     <div [ngStyle]="allButtonsDivStyles()">
-      <button [ngStyle]="buttonStyles()">SHOW ALL STUDENTS</button>
-      <button [ngStyle]="buttonStyles()">STUDENTS WITH BALANCE</button>
-      <button [ngStyle]="buttonStyles()">STUDENTS WITHOUT BALANCE</button>
-      <button [ngStyle]="buttonStyles()" (click)="toggleDisplayDiv()" >ADD NEW STUDENT</button>
+      <button [ngStyle]="buttonStyles()" (click)="changeValue('all')">SHOW ALL STUDENTS</button>
+      <button [ngStyle]="buttonStyles()" (click)="changeValue('withBal')">STUDENTS WITH BALANCE</button>
+      <button [ngStyle]="buttonStyles()" (click)="changeValue('noBal')">STUDENTS WITHOUT BALANCE</button>
+      <button [ngStyle]="buttonStyles()" (click)="toggleDisplayDiv()">
+        ADD NEW STUDENT
+      </button>
     </div>
     <div [ngStyle]="{ width: '75%', padding: ' 0px 20px' }">
       <div [ngStyle]="columnHeadingStyles()">
@@ -37,26 +37,70 @@
         <h3>FEES PAID</h3>
         <h3>FEE BALANCE</h3>
       </div>
+
+      <div [ngSwitch]="status" >
+        <div *ngSwitchCase="'all'" >
       <div *ngIf="studentsArr.length; else noStudent">
-        <div *ngFor="let student of studentsArr; let i = index">
-          <div
-            [ngStyle]="displayStudentDivStyles()"
-            (click)="showStudentDetails(i)"
-          >
-            <p>{{ student.regNo }}</p>
-            <p>{{ student.name }}</p>
-            <p>{{ student.feePaid | currency: "KSH" }}</p>
-            <p>
-              {{
-                getBalance(student.schoolFee, student.feePaid) | currency: "KSH"
-              }}
-            </p>
-          </div>
+        <div *ngFor="let student of studentsArr ; let i = index" [ngStyle]="displayStudentDivStyles()">
+          <p>{{ student.regNo }}</p>
+          <p>{{ student.name }}</p>
+          <p>{{ student.feePaid | currency: "KSH" }}</p>
+           <p>
+            {{
+              getBalance(student.schoolFee, student.feePaid) | currency: "KSH"
+            }}
+           </p>
+           
+          
         </div>
+       
       </div>
       <ng-template #noStudent>
-        <p><i>There are no students to display!!</i></p>
+        <p><i>There are no students to in the system!!</i></p>
       </ng-template>
+
+          
+        </div>
+        <div *ngSwitchCase="'withBal'" >
+          <div *ngIf="studentsArr.length; else noStudent">
+            <div *ngFor="let student of studentsArr |withBalance:student.feePaid let i = index" [ngStyle]="displayStudentDivStyles()">
+              <p>{{ student.regNo }}</p>
+              <p>{{ student.name }}</p>
+              <p>{{ student.feePaid | currency: "KSH" }}</p>
+              <p>
+                {{
+                  getBalance(student.schoolFee, student.feePaid) | currency: "KSH"
+                }}
+              </p>
+            </div>
+          </div>
+          <ng-template #noStudent>
+            <p><i>All students have paid their fees!!</i></p>
+          </ng-template>
+        
+        </div>
+        <div *ngSwitchCase="'noBal'" >
+          <div *ngIf="studentsArr.length; else noStudent">
+            <div *ngFor="let student of studentsArr |withoutBalance:student.feePaid  let i = index" [ngStyle]="displayStudentDivStyles()">
+              <p>{{ student.regNo }}</p>
+              <p>{{ student.name }}</p>
+              <p>{{ student.feePaid | currency: "KSH" }}</p>
+              <p>
+                {{
+                  getBalance(student.schoolFee, student.feePaid) | currency: "KSH"
+                }}
+              </p>
+            </div>
+          </div>
+         
+          <ng-template #noStudent>
+            <p><i>All students have paid their fees!!</i></p>
+          </ng-template>
+        </div>
+    
+      </div>
+
+     
     </div>
   </div>
 </div>
