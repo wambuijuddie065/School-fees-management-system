@@ -14,6 +14,8 @@ import { AuthGuardService } from './Services/auth-guard.service';
 import { StudentsGuardService } from './Services/students-guard.service';
 import { WithBalancePipe } from './Pipes/with-balance.pipe';
 import { WithoutBalancePipe } from './Pipes/without-balance.pipe';
+import { CapitalizationPipe } from './Pipes/capitalization.pipe';
+import { BackgroundDirective } from './background.directive';
 
 
 
@@ -42,6 +44,8 @@ const appRouter:Routes=[
     StudentComponent,
     WithBalancePipe,
     WithoutBalancePipe,
+    CapitalizationPipe,
+    BackgroundDirective,
   
     
   ],
