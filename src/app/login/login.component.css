@@ -1,0 +1,31 @@
+.mainLoginDiv {
+    width: 30%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    align-content: center;
+    background-color:#C4A484;
+    margin: 50px auto;
+    padding: 10px;
+}
+.loginDivsStyles{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.loginInputStyles{
+    height: 40px;
+    width:350px
+}
+.loginBtnStyles{
+    background-color: #5A1013;
+    height: 50px;
+    width: 360px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 20px
+}

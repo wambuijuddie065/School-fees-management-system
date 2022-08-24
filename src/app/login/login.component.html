@@ -1,6 +1,6 @@
 
 
-<div [ngStyle]="mainLoginDivStyles()">
+<div  class="mainLoginDiv">
   <div >
     <p *ngIf="!errMessage ; else noError" ></p>
     <ng-template #noError>
@@ -14,17 +14,17 @@
 
 
 
-<div [ngStyle]="loginDivsStyles()">
+<div class="loginDivsStyles">
   <label for="Email">Email:</label>
-  <input type="email" [ngStyle]=" loginInputStyles()" [ngModelOptions]="{standalone:true}" [(ngModel)]="email" required />
+  <input type="email" class="loginInputStyles" [ngModelOptions]="{standalone:true}" [(ngModel)]="email" required />
 </div>
-<div [ngStyle]="loginDivsStyles()">
+<div class="loginDivsStyles">
   <label for="Password">Password:</label>
-  <input type="password" [ngStyle]=" loginInputStyles()" [ngModelOptions]="{standalone:true}" [(ngModel)]="pwd" required/>
+  <input type="password"  class="loginInputStyles" [ngModelOptions]="{standalone:true}" [(ngModel)]="pwd" required/>
 </div>
 <div>
   <button
-    [ngStyle]="loginBtnStyles()"
+    class="loginBtnStyles"
     (click)="login()">
     LOGIN
   </button>

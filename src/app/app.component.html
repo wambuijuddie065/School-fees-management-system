@@ -14,14 +14,14 @@
         <div [ngStyle]="{display:'flex',gap:'40px',alignItems:'center' }" >
             <a [ngStyle]="{textDecoration:'none' ,
             height:'50px',padding:'5px',textAlign:'center',fontSize:'18px',color:'white',marginTop:'13px' }" routerLink="home" *ngIf="authGuard.isLoggedIn"  routerLinkActive="active" >HOME</a>
-            <a [ngStyle]="{textDecoration:'none',color:'white',height:'50px',fontSize:'18px',marginTop:'13px'}"
+            <a [ngStyle]="{textDecorationColor:'#C4A484',color:'white',height:'50px',fontSize:'18px',marginTop:'13px'}"
              routerLink="dashboard" routerLinkActive="active" *ngIf="authGuard.isLoggedIn"> DASHBOARD</a>
             <button [ngStyle]="{textDecoration:'none',height:'50px'}" 
             routerLink="login" routerLinkActive="active" 
             [ngStyle]="{backgroundColor:'#5A1013',
-    height:'50px',width:'100px', color:'white',
-     border:'none', borderRadius:'50px', fontSize:'18px'}"
-            *ngIf="!authGuard.isLoggedIn"  >LOGIN</button>
+    height:'50px',width:'100px', borderRadius:'50px', color:'white',
+     border:'none', fontSize:'18px'}"
+            *ngIf="!authGuard.isLoggedIn" >LOGIN</button>
             <button [ngStyle]="{textDecoration:'none',height:'50px'}" 
              routerLinkActive="active" 
             [ngStyle]="{backgroundColor:'#5A1013',
