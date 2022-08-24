@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthGuardService } from '../Services/auth-guard.service';
 
 @Component({
   selector: 'app-hero',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroComponent implements OnInit {
 
-  constructor() { }
+  constructor(public authGuard:AuthGuardService) { }
 
   ngOnInit(): void {
   }

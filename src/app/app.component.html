@@ -1,42 +1,105 @@
-<div class="con" >
-    <div [ngStyle]="{display:'flex',
-    justifyContent:'space-between',
-    alignItems:'center',
-    height:'fitContent',
-    padding:'5px 20px',
-    backgroundColor:'#C4A484',borderRadius:'20px'
-  }">
-        <div><img [ngStyle]="{height:'60px'}" src="https://cdn.pixabay.com/photo/2017/01/16/10/51/diploma-1983725__480.png" alt=""></div>
-        <div [ngStyle]="{display:'flex',gap:'40px',alignItems:'center',color:'white'}">
-        <h2>WELCOME TO THE JITU SCHOOL</h2>
-            
-        </div>
-        <div [ngStyle]="{display:'flex',gap:'40px',alignItems:'center' }" >
-            <a [ngStyle]="{textDecoration:'none' ,
-            height:'50px',padding:'5px',textAlign:'center',fontSize:'18px',color:'white',marginTop:'13px' }" routerLink="home" *ngIf="authGuard.isLoggedIn"  routerLinkActive="active" >HOME</a>
-            <a [ngStyle]="{textDecorationColor:'#C4A484',color:'white',height:'50px',fontSize:'18px',marginTop:'13px'}"
-             routerLink="dashboard" routerLinkActive="active" *ngIf="authGuard.isLoggedIn"> DASHBOARD</a>
-            <button [ngStyle]="{textDecoration:'none',height:'50px'}" 
-            routerLink="login" routerLinkActive="active" 
-            [ngStyle]="{backgroundColor:'#5A1013',
-    height:'50px',width:'100px', borderRadius:'50px', color:'white',
-     border:'none', fontSize:'18px'}"
-            *ngIf="!authGuard.isLoggedIn" >LOGIN</button>
-            <button [ngStyle]="{textDecoration:'none',height:'50px'}" 
-             routerLinkActive="active" 
-            [ngStyle]="{backgroundColor:'#5A1013',
-    height:'50px',width:'100px', color:'white',
-     border:'none', borderRadius:'50px', fontSize:'18px'}" href=""
-            routerLinkActive="active" routerLink="login"  (click)="logout()" *ngIf="authGuard.isLoggedIn" >LOGOUT</button>
-        </div>
-
+<div class="con">
+  <div
+    [ngStyle]="{
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      height: 'fitContent',
+      padding: '5px 20px',
+      backgroundColor: '#C4A484',
+      borderRadius: '20px'
+    }"
+  >
+    <div>
+      <img
+        [ngStyle]="{ height: '60px' }"
+        src="https://cdn.pixabay.com/photo/2017/01/16/10/51/diploma-1983725__480.png"
+        alt=""
+      />
     </div>
-    <router-outlet></router-outlet>
-    <!-- <div>
+    <div
+      [ngStyle]="{
+        display: 'flex',
+        gap: '40px',
+        alignItems: 'center',
+        color: 'white'
+      }"
+    >
+      <h2>WELCOME TO THE JITU SCHOOL</h2>
+    </div>
+    <div [ngStyle]="{ display: 'flex', gap: '40px', alignItems: 'center' }">
+      <a
+        [ngStyle]="{
+          textDecoration: 'none',
+          height: '50px',
+          padding: '5px',
+          textAlign: 'center',
+          fontSize: '18px',
+          color: 'white',
+          marginTop: '13px'
+        }"
+        routerLink="home"
+        *ngIf="authGuard.isLoggedIn"
+        routerLinkActive="active"
+        >HOME</a
+      >
+      <a
+        [ngStyle]="{
+          textDecorationColor: '#C4A484',
+          color: 'white',
+          height: '50px',
+          fontSize: '18px',
+          marginTop: '13px'
+        }"
+        routerLink="dashboard"
+        routerLinkActive="active"
+        *ngIf="authGuard.isLoggedIn"
+      >
+        DASHBOARD</a
+      >
+      <button
+        [ngStyle]="{ textDecoration: 'none', height: '50px' }"
+        routerLink="login"
+        routerLinkActive="active"
+        [ngStyle]="{
+          backgroundColor: '#5A1013',
+          height: '50px',
+          width: '100px',
+          borderRadius: '50px',
+          color: 'white',
+          border: 'none',
+          fontSize: '18px'
+        }"
+        *ngIf="!authGuard.isLoggedIn"
+      >
+        LOGIN
+      </button>
+      <button
+        [ngStyle]="{ textDecoration: 'none', height: '50px' }"
+        routerLinkActive="active"
+        [ngStyle]="{
+          backgroundColor: '#5A1013',
+          height: '50px',
+          width: '100px',
+          color: 'white',
+          border: 'none',
+          borderRadius: '50px',
+          fontSize: '18px'
+        }"
+        href=""
+        routerLinkActive="active"
+        routerLink="login"
+        (click)="logout()"
+        *ngIf="authGuard.isLoggedIn"
+      >
+        LOGOUT
+      </button>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  <!-- <div>
         <app-hero></app-hero>
         <app-login></app-login>
         <app-dashboard></app-dashboard>
     </div> -->
 </div>
-
-

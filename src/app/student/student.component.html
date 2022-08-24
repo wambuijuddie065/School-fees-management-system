@@ -1,6 +1,16 @@
-<div>
-    <h3>{{student.regNo}}</h3>
-    <h3>{{student.name}}</h3>
-    <p>{{student.feePaid}}</p>
-    <p>{{getBalance(student.schoolFee,student.feePaid)}}</p>
+
+<div class="studentDiv">
+    <img
+    [ngStyle]="{ height: '60px' }"
+    src="https://cdn.pixabay.com/photo/2017/01/16/10/51/diploma-1983725__480.png"
+    alt=""
+  />
+  <h3>REG NO:{{ student.regNo }}</h3>
+  <h3>NAME:{{ student.name | uppercase }}</h3>
+  <h3>FEE PAID: {{ student.feePaid |currency : "KSH" }}</h3>
+  <h3>FEE BALANCE:{{ getBalance(student.schoolFee, student.feePaid)|currency : "KSH" }}</h3>
+  <div class="actions">
+    <button>UPDATE</button>
+    <button>DELETE</button>
+  </div>
 </div>

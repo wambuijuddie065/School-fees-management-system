@@ -60,7 +60,7 @@
             <div
               *ngFor="let student of studentsArr; let i = index"
               class="displayStudentDiv"
-              (click)="showStudentDetails(i)"
+              routerLink="/dashboard/student/{{i}}"
             >
               <p>{{ student.regNo }}</p>
               <p>{{ student.name | capitalization }}</p>
@@ -88,7 +88,7 @@
               appBackground
               [textColor]="'#5A1013'"
               [backgroundColor]="'#C4A484'"
-              (click)="showStudentDetails(i)"
+              routerLink="/dashboard/student/{{i}}"
             >
               <p>{{ student.regNo }}</p>
               <p>{{ student.name }}</p>
@@ -113,7 +113,7 @@
                 let i = index
               "
               class="displayStudentDiv"
-              (click)="showStudentDetails(i)"
+              routerLink="/dashboard/student/{{i}}"
             >
               <p>{{ student.regNo }}</p>
               <p>{{ student.name }}</p>
@@ -134,4 +134,5 @@
       </div>
     </div>
   </div>
+  <router-outlet></router-outlet>
 </div>

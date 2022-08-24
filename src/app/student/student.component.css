@@ -1,0 +1,37 @@
+
+/* .container{
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmXXCDYFr81V1g-czG3hU0IKW_IXK80GaFBw&usqp=CAU');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+} */
+.studentDiv{
+    width: 30%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    background-color:#C4A484;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 50px;
+}
+.actions{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+button{
+    background-color: #5A1013;
+    height: 50px;
+    width: 360px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 20px
+}

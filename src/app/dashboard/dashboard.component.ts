@@ -57,9 +57,7 @@ export class DashboardComponent implements OnInit {
     const diff = schoolFees - paidFees;
     return diff;
   }
-  showStudentDetails(i: number) {
-    this.route.navigate(['student', i]);
-  }
+  
   isShowDiv = false;
   toggleDisplayDiv() {
     this.isShowDiv = !this.isShowDiv;

@@ -25,7 +25,8 @@ const appRouter:Routes=[
   {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'home', component: HeroComponent},
   {path:'login', component: LoginComponent},
-  {path:'dashboard', component: DashboardComponent,children:[
+  {path:'dashboard', component: DashboardComponent},
+  {path:'dashboard',children:[
     {path:'student/:id',component: StudentComponent}
   ],canActivate:[StudentsGuardService]},
  

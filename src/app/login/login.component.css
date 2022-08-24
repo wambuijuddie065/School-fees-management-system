@@ -3,12 +3,13 @@
     height: 500px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     align-items: center;
     align-content: center;
     background-color:#C4A484;
     margin: 50px auto;
     padding: 10px;
+    border-radius: 50px;
 }
 .loginDivsStyles{
     display: flex;

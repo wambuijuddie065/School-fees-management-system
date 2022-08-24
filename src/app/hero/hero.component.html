@@ -7,7 +7,7 @@
       temporibus corporis!
     </p>
 
-    <button class="getStartedBtn">GET STARTED</button>
+    <button routerLink="/login"*ngIf="!authGuard.isLoggedIn" class="getStartedBtn">GET STARTED</button>
   </div>
   <div class="rightDiv">
     <img
