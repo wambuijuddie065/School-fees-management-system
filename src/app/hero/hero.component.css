@@ -41,5 +41,6 @@
 .heroImg {
     object-fit: cover;
     position: absolute;
-    width: 500px
+    width: fit-content;
+    height: fit-content
 }

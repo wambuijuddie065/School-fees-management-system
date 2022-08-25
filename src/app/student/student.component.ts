@@ -16,12 +16,20 @@ export class StudentComponent implements OnInit {
     schoolFee:40000
   }
    id!:number;
+   
   constructor(private activatedRoute:ActivatedRoute,private studentService:StudentsService) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((value:Params)=>{
+    
+      
       this.id=value['id']
+
+     
+      
       this.student=this.studentService.getStudent(this.id)
+     
+      
     })
     
   }
@@ -29,6 +37,11 @@ export class StudentComponent implements OnInit {
     const diff=schoolFees-paidFees
     return diff
       
+  }
+  onDelete(){
+    this.studentService.deleteStudent(this.id)
+    console.log('click ondelete');
+    
   }
  
 

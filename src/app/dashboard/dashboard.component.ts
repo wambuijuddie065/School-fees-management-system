@@ -39,12 +39,14 @@ export class DashboardComponent implements OnInit {
     this.status = val;
   }
   onAdd(reg: string, name: string, fee: string) {
-    this.studentService.addStudent({
+   this.studentService.addStudent({
       name,
       regNo: reg,
       feePaid: +fee,
       schoolFee: 40000,
     });
+    console.log();
+    
     this.clear();
   }
   clear() {

@@ -91,7 +91,7 @@
               routerLink="/dashboard/student/{{i}}"
             >
               <p>{{ student.regNo }}</p>
-              <p>{{ student.name }}</p>
+              <p>{{ student.name | capitalization}}</p>
               <p>{{ student.feePaid | currency: "KSH" }}</p>
               <p>
                 {{
@@ -116,7 +116,7 @@
               routerLink="/dashboard/student/{{i}}"
             >
               <p>{{ student.regNo }}</p>
-              <p>{{ student.name }}</p>
+              <p>{{ student.name | capitalization }}</p>
               <p>{{ student.feePaid | currency: "KSH" }}</p>
               <p>
                 {{

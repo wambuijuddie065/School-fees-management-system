@@ -11,6 +11,6 @@
   <h3>FEE BALANCE:{{ getBalance(student.schoolFee, student.feePaid)|currency : "KSH" }}</h3>
   <div class="actions">
     <button>UPDATE</button>
-    <button>DELETE</button>
+    <button (click)="onDelete()">DELETE</button>
   </div>
 </div>
