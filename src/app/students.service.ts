@@ -28,35 +28,23 @@ export class StudentsService {
   ];
 
   addStudent(newStudent: StudentInterface) {
-    if (newStudent.regNo==''||newStudent.name=='')
-    
-     {
-      alert('Please fill in all the fields')
-      
+    if (newStudent.regNo == '' || newStudent.name == '') {
+      alert('Please fill in all the fields');
     } else {
       this.studentsArr.push(newStudent);
       
-      
-      
     }
-    
   }
   getStudents() {
     return this.studentsArr;
   }
   getStudent(index: number) {
-   
+    
+
     return this.studentsArr[index];
-    
-    
   }
-  deleteStudent(index:number){
+  deleteStudent(index: number) {
     console.log('clicked delete service');
-    return this.studentsArr.splice(index,1)
-   
-    
-
-
-
+    return this.studentsArr.splice(index, 1);
   }
 }
